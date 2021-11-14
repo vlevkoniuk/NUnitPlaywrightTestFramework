@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Net.Http.Headers;
 
-namespace Framework.Helpers
+namespace TestFramework.Helpers
 {
     public static class HttpRequests
     {
@@ -25,6 +25,7 @@ namespace Framework.Helpers
                 {
                     if (!string.IsNullOrWhiteSpace(authType) && !string.IsNullOrWhiteSpace(authToken) && !string.IsNullOrWhiteSpace(baseAddress))
                     {
+                        _initialized = true;
                         return true;
                     }
                 }
@@ -32,9 +33,11 @@ namespace Framework.Helpers
                 {
                     if (!string.IsNullOrWhiteSpace(baseAddress))
                     {
+                        _initialized = true;
                         return true;
                     }
                 }
+                _initialized = false;
                 return false;
             }
         }

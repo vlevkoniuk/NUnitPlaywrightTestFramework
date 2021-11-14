@@ -1,7 +1,7 @@
 using System;
 using NUnit.Framework;
 
-namespace Framework.Helpers
+namespace TestFramework.Helpers
 {
     public static class Logger
     {

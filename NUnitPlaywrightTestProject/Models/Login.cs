@@ -1,4 +1,4 @@
-namespace Framework.Models
+namespace TestFramework.Models
 {
     public class Login
     {

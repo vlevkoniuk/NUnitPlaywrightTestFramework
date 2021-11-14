@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 
-namespace Framework.Helpers
+namespace TestFramework.Helpers
 {
     public static class LocalTestDataReader
     {

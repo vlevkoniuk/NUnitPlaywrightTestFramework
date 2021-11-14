@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Framework.Common;
+using TestFramework.Common;
 using Microsoft.Playwright;
 
 
-namespace Framework.PageObjects
+namespace TestFramework.PageObjects
 {
     public class GoogleSearchPage : AbstractPage
     {

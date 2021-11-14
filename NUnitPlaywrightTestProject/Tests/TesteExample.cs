@@ -1,15 +1,15 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using NUnit.Framework;
-using Framework.Helpers;
-using Framework.Models;
-using Framework.PageObjects;
+using TestFramework.Helpers;
+using TestFramework.Models;
+using TestFramework.PageObjects;
 using System.Reflection;
 using System.Diagnostics;
 using Microsoft.Playwright;
 using System;
 
-namespace NUnitSeleniumTestProjectExample.Tests
+namespace TestFramework.Tests
 {
     [TestFixture]
     public class TesteExample
@@ -20,9 +20,9 @@ namespace NUnitSeleniumTestProjectExample.Tests
         public static string HeadlessEnv => (Environment.GetEnvironmentVariable("HEADLESS") ?? "true");
         private static readonly Task<IPlaywright> _playwrightTask = Microsoft.Playwright.Playwright.CreateAsync();
 
-        public IPlaywright? Playwright { get; private set; }
+        public IPlaywright Playwright { get; private set; }
 
-        public IBrowserType? BrowserType { get; private set; }
+        public IBrowserType BrowserType { get; private set; }
         private IPage page;
 
         [SetUp]

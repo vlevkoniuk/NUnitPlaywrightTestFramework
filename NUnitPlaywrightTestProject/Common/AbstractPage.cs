@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Microsoft.Playwright;
 using System.Threading.Tasks;
 
-namespace Framework.Common
+namespace TestFramework.Common
 
 {
     public abstract class AbstractPage

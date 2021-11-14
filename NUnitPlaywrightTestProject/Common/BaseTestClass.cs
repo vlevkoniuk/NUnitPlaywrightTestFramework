@@ -2,16 +2,15 @@ using System;
 using System.Threading.Tasks;
 using Microsoft.Playwright;
 using NUnit.Framework;
-using Framework.Helpers;
+using TestFramework.Helpers;
 
-namespace Framework.Common
+namespace TestFramework.Common
 {
     [TestFixture]
     public  class BaseTestClass
     {
               
         public IBrowser browser {get; set;}
-        //private Login _loginInfo;
         public static string BrowserName => (Environment.GetEnvironmentVariable("BROWSER") ?? Microsoft.Playwright.BrowserType.Chromium).ToLower();
         public static string HeadlessEnv => (Environment.GetEnvironmentVariable("HEADLESS") ?? "true");
         private  readonly Task<IPlaywright> _playwrightTask = Microsoft.Playwright.Playwright.CreateAsync();
@@ -25,7 +24,7 @@ namespace Framework.Common
         [SetUp]
         public virtual async Task SetUp()
         {
-            Logger.LogInfo("initializing BaseTest  browser and page");
+            Logger.LogInfo("initializing BaseTest browser and page");
             Playwright = await _playwrightTask;
             BrowserType = Playwright[BrowserName];
             browser = await BrowserType.LaunchAsync(new BrowserTypeLaunchOptions {Headless=Boolean.Parse(HeadlessEnv)});
@@ -35,7 +34,6 @@ namespace Framework.Common
         [TearDown]
         public virtual void TearDown()
         {
-            //driver.Close();
             Playwright.Dispose();
         }
         

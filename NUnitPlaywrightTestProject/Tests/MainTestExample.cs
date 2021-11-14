@@ -1,14 +1,14 @@
 using System.Threading.Tasks;
-using Framework.Common;
-using Framework.PageObjects;
+using TestFramework.Common;
+using TestFramework.PageObjects;
 using Microsoft.Playwright;
 using NUnit.Framework;
-using Framework.Helpers;
+using TestFramework.Helpers;
 
-namespace NUnitPlaywrightTestProject.Tests
+namespace TestFramework.Tests
 {
     [TestFixture]
-    public class SecondTest : BaseTestClass
+    public class MainTestExample : BaseTestClass
     {
         [SetUp]
         public override async Task SetUp()
@@ -18,7 +18,7 @@ namespace NUnitPlaywrightTestProject.Tests
         }
 
         [Test]
-        public async Task Test1()
+        public async Task PlaywrightPOMtest()
         {
             Logger.LogDebug(page.Url);
             GoogleSearchPage gPage = new GoogleSearchPage(page);

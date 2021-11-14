@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using Framework.Common;
+using TestFramework.Common;
 using Microsoft.Playwright;
 
-namespace Framework.PageObjects
+namespace TestFramework.PageObjects
 {
     public class GoogleSearchResult : AbstractPage
     {
