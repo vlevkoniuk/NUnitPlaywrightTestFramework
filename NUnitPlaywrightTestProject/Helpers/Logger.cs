@@ -1,7 +1,7 @@
 using System;
 using NUnit.Framework;
 
-namespace NUnitSeleniumTestProjectExample.Helpers
+namespace Framework.Helpers
 {
     public static class Logger
     {

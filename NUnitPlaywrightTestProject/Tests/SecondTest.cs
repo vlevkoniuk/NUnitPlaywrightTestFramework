@@ -3,7 +3,7 @@ using Framework.Common;
 using Framework.PageObjects;
 using Microsoft.Playwright;
 using NUnit.Framework;
-using NUnitSeleniumTestProjectExample.Helpers;
+using Framework.Helpers;
 
 namespace NUnitPlaywrightTestProject.Tests
 {

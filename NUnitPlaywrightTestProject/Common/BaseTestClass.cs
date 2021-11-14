@@ -2,7 +2,7 @@ using System;
 using System.Threading.Tasks;
 using Microsoft.Playwright;
 using NUnit.Framework;
-using NUnitSeleniumTestProjectExample.Helpers;
+using Framework.Helpers;
 
 namespace Framework.Common
 {

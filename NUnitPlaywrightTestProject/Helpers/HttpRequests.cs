@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Net.Http.Headers;
 
-namespace NUnitSeleniumTestProjectExample.Helpers
+namespace Framework.Helpers
 {
     public static class HttpRequests
     {

@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using NUnit.Framework;
-using NUnitSeleniumTestProjectExample.Helpers;
-using NUnitSeleniumTestProjectExample.Models;
+using Framework.Helpers;
+using Framework.Models;
 using Framework.PageObjects;
 using System.Reflection;
 using System.Diagnostics;

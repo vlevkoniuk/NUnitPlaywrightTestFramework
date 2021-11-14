@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 
-namespace NUnitSeleniumTestProjectExample.Helpers
+namespace Framework.Helpers
 {
     public static class LocalTestDataReader
     {

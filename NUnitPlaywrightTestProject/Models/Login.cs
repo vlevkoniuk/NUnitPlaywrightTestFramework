@@ -1,4 +1,4 @@
-namespace NUnitSeleniumTestProjectExample.Models
+namespace Framework.Models
 {
     public class Login
     {
