@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnitPlaywrightTestProject", "NUnitPlaywrightTestProject\NUnitPlaywrightTestProject.csproj", "{C04CFAD2-1010-426C-A1E8-936C407F13F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcceptanceTests", "AcceptanceTests\AcceptanceTests.csproj", "{9A6A1724-82BF-40BD-BF88-565A07344E89}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C04CFAD2-1010-426C-A1E8-936C407F13F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C04CFAD2-1010-426C-A1E8-936C407F13F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C04CFAD2-1010-426C-A1E8-936C407F13F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C04CFAD2-1010-426C-A1E8-936C407F13F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A6A1724-82BF-40BD-BF88-565A07344E89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A6A1724-82BF-40BD-BF88-565A07344E89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A6A1724-82BF-40BD-BF88-565A07344E89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A6A1724-82BF-40BD-BF88-565A07344E89}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7DE69486-8E09-4B0C-A917-B0F2C707B898}
+	EndGlobalSection
+EndGlobal

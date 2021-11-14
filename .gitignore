@@ -1,0 +1,6 @@
+.vs/
+.vscode/
+AcceptanceTests/bin
+AcceptanceTests/obj
+NUnitPlaywrightTestProject/bin
+NUnitPlaywrightTestProject/obj
