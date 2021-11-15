@@ -19,16 +19,18 @@ namespace TestFramework.Common
 
         public  IBrowserType BrowserType { get; set; }
         public  IPage page {get; set; }
+        public  IBrowserContext context {get; set; }
 
 
         [SetUp]
-        public virtual async Task SetUp()
+        public virtual async Task SetUpAsync()
         {
             Logger.LogInfo("initializing BaseTest browser and page");
             Playwright = await _playwrightTask;
             BrowserType = Playwright[BrowserName];
             browser = await BrowserType.LaunchAsync(new BrowserTypeLaunchOptions {Headless=Boolean.Parse(HeadlessEnv)});
             page = await browser.NewPageAsync();
+            context = await browser.NewContextAsync();
         }
 
         [TearDown]

@@ -8,12 +8,12 @@ using TestFramework.Helpers;
 namespace TestFramework.Tests
 {
     [TestFixture]
-    public class MainTestExample : BaseTestClass
+    public class MainTestExampleWithPage : BaseTestClass
     {
         [SetUp]
-        public override async Task SetUp()
+        public override async Task SetUpAsync()
         {
-            await base.SetUp();
+            await base.SetUpAsync();
 
         }
 
