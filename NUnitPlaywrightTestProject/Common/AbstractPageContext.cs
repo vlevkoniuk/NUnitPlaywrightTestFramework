@@ -19,6 +19,12 @@ namespace TestFramework.Common
             t.Wait();
         }
 
+        //init POM with the page inside the context we can call it like new AbstractPageContext(context.Pages[nth])
+        public AbstractPageContext(IPage page)
+        {
+            _page = page;
+        }
+
         public async Task Init()
         {
             if (_context.Pages.Count < 1)

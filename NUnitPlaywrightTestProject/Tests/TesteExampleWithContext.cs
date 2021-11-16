@@ -13,24 +13,14 @@ using TestFramework.Common;
 namespace TestFramework.Tests
 {
     [TestFixture]
-    public class TesteExampleWithContext : BaseTestClass
+    public class TesteExampleWithContext : BaseTestContextClass
     {
-        // private IBrowser browser;
         private Login _loginInfo;
-        // public static string BrowserName => (Environment.GetEnvironmentVariable("BROWSER") ?? Microsoft.Playwright.BrowserType.Chromium).ToLower();
-        // public static string HeadlessEnv => (Environment.GetEnvironmentVariable("HEADLESS") ?? "true");
-        // private static readonly Task<IPlaywright> _playwrightTask = Microsoft.Playwright.Playwright.CreateAsync();
 
-        // public IPlaywright Playwright { get; private set; }
-
-        // public IBrowserType BrowserType { get; private set; }
-        // private IPage page;
-        // private IBrowserContext context;
-
-        [SetUp]
-        public async Task SetupAsync()
+        [OneTimeSetUp]
+        public override async Task OneTimeSetUpAsync()
         {
-            await base.SetUpAsync();
+            await base.OneTimeSetUpAsync();
             Logger.logLevel = 0; // log all messages
 
             //sample of reading data from JSON file
@@ -48,7 +38,6 @@ namespace TestFramework.Tests
             //Logger.LogError("Error message");
             //Logger.LogFatal("Fatal message");
             
-            Logger.LogDebug(page.Url);
             GoogleSearchPageContext gPage = new GoogleSearchPageContext(context);
             Logger.LogDebug(context.Pages[0].Url);
             await gPage.OpenPageAsync();
@@ -68,11 +57,10 @@ namespace TestFramework.Tests
             
         }
 
-        [TearDown]
-        public override void TearDown()
+        [OneTimeTearDown]
+        public override void OneTimeTearDown()
         {
-            //driver.Close();
-            base.TearDown();
+            base.OneTimeTearDown();
         }
         
     }
