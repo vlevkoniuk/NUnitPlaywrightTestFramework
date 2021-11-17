@@ -21,7 +21,7 @@ namespace TestFramework.Tests
         public override async Task OneTimeSetUpAsync()
         {
             await base.OneTimeSetUpAsync();
-            Logger.logLevel = 0; // log all messages
+            logger.logLevel = 0; // log all messages
 
             //sample of reading data from JSON file
             _loginInfo = new Login();
@@ -39,20 +39,20 @@ namespace TestFramework.Tests
             //Logger.LogFatal("Fatal message");
             
             GoogleSearchPageContext gPage = new GoogleSearchPageContext(context);
-            Logger.LogDebug(context.Pages[0].Url);
+            logger.LogDebug(context.Pages[0].Url);
             await gPage.OpenPageAsync();
             await gPage.SearchAsync("viacheslav levkoniuk");
 
-            Logger.LogDebug(context.Pages[0].Url);
+            logger.LogDebug(context.Pages[0].Url);
             GoogleSearchResultContext resPage = new GoogleSearchResultContext(context);
             ILocator firstLink = resPage.GetLink(0);
-            Logger.LogDebug(firstLink.ToString());
+            logger.LogDebug(firstLink.ToString());
             string linkHref = await firstLink.GetAttributeAsync("href");
-            Logger.LogDebug("linkHref = " + linkHref);
+            logger.LogDebug("linkHref = " + linkHref);
             Assert.IsTrue(linkHref.Contains("linkedin") && linkHref.Contains("viacheslav-levkoniuk"), "The search result does not contain requested search result");
-            Logger.LogInfo("clicking the first link");
+            logger.LogInfo("clicking the first link");
             await firstLink.ClickAsync();
-            Logger.LogDebug(context.Pages[0].Url);
+            logger.LogDebug(context.Pages[0].Url);
             Assert.IsTrue(context.Pages[0].Url.Contains("linkedin"));
             
         }

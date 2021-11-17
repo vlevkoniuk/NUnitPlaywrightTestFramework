@@ -20,12 +20,13 @@ namespace TestFramework.Common
         public  IBrowserType BrowserType { get; set; }
         public  IPage page {get; set; }
         public  IBrowserContext context {get; set; }
+        public Logger logger = new Logger();
 
 
         [SetUp]
         public virtual async Task SetUpAsync()
         {
-            Logger.LogInfo("initializing BaseTest browser and page");
+            logger.LogInfo("initializing BaseTest browser and page");
             Playwright = await _playwrightTask;
             BrowserType = Playwright[BrowserName];
             browser = await BrowserType.LaunchAsync(new BrowserTypeLaunchOptions {Headless=Boolean.Parse(HeadlessEnv)});
@@ -36,6 +37,7 @@ namespace TestFramework.Common
         [TearDown]
         public virtual void TearDown()
         {
+            logger.LogInfo("Disposing playwright");
             Playwright.Dispose();
         }
         

@@ -3,9 +3,9 @@ using NUnit.Framework;
 
 namespace TestFramework.Helpers
 {
-    public static class Logger
+    public class Logger
     {
-        public static int logLevel;
+        public  int logLevel;
         private enum MessageTypes : int
         {
             Fatal = 0,
@@ -15,7 +15,7 @@ namespace TestFramework.Helpers
             Debug = 4
         }
 
-        private static void logMessage(MessageTypes type, string message)
+        private  void logMessage(MessageTypes type, string message)
         {
             if ((int)type >= logLevel) 
             {
@@ -36,27 +36,27 @@ namespace TestFramework.Helpers
             }
         }
 
-        public static void LogInfo(string message)
+        public  void LogInfo(string message)
         {
             logMessage(MessageTypes.Info, message);
         }
 
-        public static void LogWarning (string message)
+        public  void LogWarning (string message)
         {
             logMessage(MessageTypes.Warning, message);
         }
 
-        public static void LogError (string message)
+        public  void LogError (string message)
         {
             logMessage(MessageTypes.Error, message);
         }
 
-        public static void LogDebug (string message)
+        public  void LogDebug (string message)
         {
             logMessage(MessageTypes.Debug, message);
         }
 
-        public static void LogFatal (string message)
+        public  void LogFatal (string message)
         {
             logMessage(MessageTypes.Fatal, message); 
         }
