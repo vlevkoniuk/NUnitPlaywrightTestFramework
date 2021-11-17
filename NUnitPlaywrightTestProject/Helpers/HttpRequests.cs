@@ -9,15 +9,15 @@ using System.Net.Http.Headers;
 
 namespace TestFramework.Helpers
 {
-    public static class HttpRequests
+    public class HttpRequests
     {
-        private static string authType;
-        private static string authToken;
-        private static string baseAddress;
-        private static bool authCapable;
-        private static bool _initialized;
+        private  string authType;
+        private  string authToken;
+        private  string baseAddress;
+        private  bool authCapable;
+        private  bool _initialized;
 
-        public static bool Initialized 
+        public  bool Initialized 
         {
             get 
             {
@@ -42,7 +42,7 @@ namespace TestFramework.Helpers
             }
         }
 
-        public static bool IsAuth
+        public  bool IsAuth
         {
             get
             {
@@ -50,7 +50,7 @@ namespace TestFramework.Helpers
             }
         }
 
-        public static void InitializaClient(string aType, string aToken, string bAddress) 
+        public  void InitializaClient(string aType, string aToken, string bAddress) 
         {
             authType = aType;
             authToken = aToken;
@@ -58,7 +58,7 @@ namespace TestFramework.Helpers
             authCapable = true;
         }
 
-        public static void InitializaClient(string bAddress) 
+        public  void InitializaClient(string bAddress) 
         {
             authType = "";
             authToken = "";
@@ -66,7 +66,7 @@ namespace TestFramework.Helpers
             authCapable = false;
         }
 
-        public static async Task<T> GetAsync<T>(string uri)
+        public  async Task<T> GetAsync<T>(string uri)
         {
             string responseString  = string.Empty;
             using (HttpClient client = new HttpClient())
@@ -99,7 +99,7 @@ namespace TestFramework.Helpers
             return resp ;
         }
 
-        public static async Task<T> GetAsync<T>(string uri, Dictionary<string,string> requestParams)
+        public  async Task<T> GetAsync<T>(string uri, Dictionary<string,string> requestParams)
         {
             StringBuilder sbURL = new StringBuilder(uri);
             if (requestParams.Count > 0)
@@ -145,7 +145,7 @@ namespace TestFramework.Helpers
             return resp ;
         }
 
-        public static async Task<T> PostAsync<T,V>(string uri, V obj)
+        public  async Task<T> PostAsync<T,V>(string uri, V obj)
         {
             string jsonString = JsonSerializer.Serialize<V>(obj);
             string responseString  = string.Empty;
