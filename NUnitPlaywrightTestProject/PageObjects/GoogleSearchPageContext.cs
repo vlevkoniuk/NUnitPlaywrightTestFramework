@@ -29,7 +29,8 @@ namespace TestFramework.PageObjects
         {
             get
             {
-                return _page.Locator("input[name=q]");
+                ILocator locator = _page.Locator("input[name=q]");
+                return locator;
             }
         }
 

@@ -14,6 +14,8 @@ namespace TestFramework.Common
         public AbstractPage(IPage page)
         {
             _page = page;
+            _page.SetDefaultTimeout(10000);
+            _page.SetDefaultNavigationTimeout(10000);
         }
 
         

@@ -15,6 +15,8 @@ namespace TestFramework.Common
         public AbstractPageContext(IBrowserContext context)
         {
             _context = context;
+            _context.SetDefaultTimeout(10000);
+            _context.SetDefaultNavigationTimeout(10000);
             var t = Task.Run(async () => await Init());
             t.Wait();
         }
@@ -23,6 +25,8 @@ namespace TestFramework.Common
         public AbstractPageContext(IPage page)
         {
             _page = page;
+            _page.SetDefaultTimeout(10000);
+            _page.SetDefaultNavigationTimeout(10000);
         }
 
         public async Task Init()
@@ -34,9 +38,10 @@ namespace TestFramework.Common
             else
             {
                 _page = _context.Pages[_context.Pages.Count - 1]; //init to last opened page
+                // _page = await _context.NewPageAsync();
             }
-            
-            
+            _page.SetDefaultTimeout(10000);
+            _page.SetDefaultNavigationTimeout(10000);
         }
 
         
