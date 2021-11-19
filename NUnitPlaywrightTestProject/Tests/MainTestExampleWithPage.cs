@@ -8,6 +8,7 @@ using TestFramework.Helpers;
 namespace TestFramework.Tests
 {
     [TestFixture]
+    [Parallelizable]
     public class MainTestExampleWithPage : BaseTestClass
     {
         

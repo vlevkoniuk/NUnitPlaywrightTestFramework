@@ -13,6 +13,7 @@ using TestFramework.Common;
 namespace TestFramework.Tests
 {
     [TestFixture]
+    [Parallelizable]
     public class TesteExampleWithContext : BaseTestContextClass
     {
         private Login _loginInfo;
