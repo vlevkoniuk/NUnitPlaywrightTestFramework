@@ -1,0 +1,13 @@
+{
+    "allure": {
+      "directory": "allure-results",
+      "links": [
+        "{link}",
+        "https://testrail.com/browse/{tms}",
+        "https://jira.com/browse/{issue}"
+      ],
+      "brokenTestData": [
+        "System.Exception"
+      ]
+    }
+  }

@@ -9,28 +9,35 @@ using System.Diagnostics;
 using Microsoft.Playwright;
 using System;
 using TestFramework.Common;
+using NUnit.Allure.Core;
+using NUnit.Allure.Attributes;
+using NUnitPlaywrightTestProject.Utils;
 
 namespace TestFramework.Tests
 {
     [TestFixture]
+    [AllureNUnit]
+    [AllureSubSuite("Context Example")]
+    [AllureSeverity(Allure.Commons.SeverityLevel.critical)]
     [Parallelizable]
     public class TesteExampleWithContext : BaseTestContextClass
     {
         private Login _loginInfo;
 
-        [OneTimeSetUp]
-        public override async Task OneTimeSetUpAsync()
+        public TesteExampleWithContext()
         {
-            await base.OneTimeSetUpAsync();
             logger.logLevel = 0; // log all messages
 
             //sample of reading data from JSON file
             _loginInfo = new Login();
             _loginInfo = LocalTestDataReader.LoadTestData<Login>(_loginInfo.GetType().Name);
-
         }
 
-        [Test, Description("Some sample test")]
+        [Test] 
+        [Description("Some sample test")]
+        [AllureTag("NUnit","Debug")]
+        [AllureIssue("GitHub#1", "https://github.com/unickq/allure-nunit")]
+        [AllureFeature("Core")]
         public async Task SearchForViacheslav()
         {
             //Logger.LogDebug("Debug message");
@@ -55,13 +62,7 @@ namespace TestFramework.Tests
             await firstLink.ClickAsync();
             logger.LogDebug(context.Pages[0].Url);
             Assert.IsTrue(context.Pages[0].Url.Contains("linkedin"));
-            
-        }
-
-        [OneTimeTearDown]
-        public override void OneTimeTearDown()
-        {
-            base.OneTimeTearDown();
+            //ReportLog.Pass("Search vor the author and redirecting to the Linked In page was successfull");
         }
         
     }
